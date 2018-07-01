@@ -32,7 +32,7 @@ label {
 
 .card {
   margin-bottom: 1rem;
-  opacity: 0.9;
+  /* opacity: 0.9; */
 }
 
 /* Media Queries */
