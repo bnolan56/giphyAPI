@@ -35,7 +35,6 @@ label {
   opacity: 0.9;
 }
 
-
 /* Media Queries */
 
 @media screen and (max-width: 480px) {
@@ -47,7 +46,7 @@ label {
   }
 
   img {
-    max-width: 75%;
+    max-width: 100%;
   }
 
 }
