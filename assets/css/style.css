@@ -1,0 +1,53 @@
+body {
+  max-width: 100%;
+  background: url('../../assets/images/athf-bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  font-family: Verdana, 'sans-serif';
+  font-size: 14px;
+}
+
+header {
+  margin-top: .5rem;
+}
+
+label {
+  font-size: 16px;
+}
+
+/* Classes & IDs */
+
+.form-control {
+  max-width: 20%;
+  display: inline-block;
+}
+
+.aqua-teen-button {
+  margin: .5rem;
+  display: inline-block;
+}
+
+.card {
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 480px) {
+
+  .form-control {
+    max-width: 100%;
+    display: block;
+    margin-bottom: .5rem;
+  }
+
+  img {
+    max-width: 75%;
+  }
+
+}
