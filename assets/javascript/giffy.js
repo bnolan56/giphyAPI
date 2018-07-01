@@ -1,24 +1,23 @@
-
 $(document).ready(function () {
 
   var aquaTeenButtons = $('#athf-buttons');
-
   var aquaTeenChars = [ "MasterShake", "Frylock", "Meatwad", "Carl Brutananadilewski", "Ezekial",
   "Bible Fruit", "Ignignokt", "Err", "Emory", "Oglethorpe", "Dr. Weird", "Steve", "Walter Melon",
   "Frat Aliens", "Boost Mobile", "Drewbacca"
   ];
 
-   $(document).on("click",".gif-response", function () {
+  // event listener on click to add classes and data attributes to buttons
+  $(document).on("click",".gif-response", function () {
+    animateGif = $(this).attr("data-animated");
+    pausedGif = $(this).attr("src");
 
-     animateGif = $(this).attr("data-animated");
-     pausedGif = $(this).attr("src");
+    console.log(animateGif);
+    console.log(pausedGif);
+    $(this).attr("src", animateGif);
+    $(this).attr("data-animated", pausedGif);
+  });
 
-     console.log(animateGif);
-     console.log(pausedGif);
-     $(this).attr("src", animateGif);
-     $(this).attr("data-animated", pausedGif);
-   });
-
+  // function searches for gif and submits AJAX request
   function searchATHF() {
 
     var searchForChar = $(this).attr('data-team-name');
@@ -31,6 +30,7 @@ $(document).ready(function () {
 
     giphyPromise.done(function (response) {
 
+      // for loop that creates the new array of 10 buttons from ajax request and adds a fixed width from giphy api classes 
       for (var i = 0; i < response.data.length; i++) {
 
         gifContainer = $("<div>");
@@ -52,9 +52,10 @@ $(document).ready(function () {
     });
   }
 
+  // function to show character gifs and append to results div
   function showChar() {
-    $("#athf-buttons").empty();
 
+    $("#athf-buttons").empty();
     for (var a = 0; a < aquaTeenChars.length; a++) {
       var aquaButton = $(this).text();
       var mooninite = $('<button>');
@@ -69,7 +70,7 @@ $(document).ready(function () {
 
   showChar();
 
-  //global click event listener
+  // global event listener, prevents default submission
   $(document).on("click", ".aqua-teen-button", searchATHF);
 
   $("#add-character").on("click", function (event) {
